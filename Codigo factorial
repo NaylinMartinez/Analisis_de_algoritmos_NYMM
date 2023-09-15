@@ -1,0 +1,24 @@
+
+#Calculo del factorial, python
+
+num=int (input("Ingresa el numero que quieras:"))
+ #Asignamos un valor al vactorial.
+factorial=1
+#Utilizo un ciclo for para continuar con el calculo del factorial
+
+for i in range(1, num + 1):
+    #Solo imprime el rango 
+    print("", i)
+print("________________________")
+
+ #calculamos el factorial
+print("------------------------")
+print("CALCULO DE FACTORIAL")
+print("------------------------")
+for i in range(1, num + 1):
+
+#Multiplicamos el factorial por todos los valores que va tomando i
+
+    factorial*=i
+    #Imprimimos el valor del factorial del número que ingrese el usuario.
+print("El factorial del número",num, "que ingreso es:",factorial)
