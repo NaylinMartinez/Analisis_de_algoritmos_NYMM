@@ -1,0 +1,86 @@
+import time
+
+def datos():
+    num=int(input("¿Cúal es la longuitud de el arreglo:"))
+    A=[0]*num
+    for i in range(num):
+        digitos=int(input(f"Ingrese el valor:{i}="))
+        A[i]=digitos
+    print("Arreglo en la posisición original:")
+    print('   ',A)
+    return A
+    
+def Mostrar(A):
+    print("Arreglo ordenado:")
+    
+    print('   ',A)
+    
+def Metodo_burbuja(A):
+    Long=len(A)
+    
+    for i in range (0,Long):
+        for j in range (0,Long-1):
+            if A[j]>A[j+1]:
+                #ciclo
+                AUX=A[j]
+                A[j]=A[j+1]
+                A[j+1]=AUX
+    return A
+    
+def Metodo_burbuja_mejorada(A):
+    Long=len(A)
+    #Comparaciones ya existentes
+    Com=False
+    T=Long
+    for i in range (0,Long):
+        if Com==True:
+            break
+        for j in range (0,T-1):
+            Com==True
+            if A[j]>A[j+1]:
+                Com==False
+                AUX=A[j]
+                A[j]=A[j+1]
+                A[j+1]=AUX
+        T=T-1
+    return A
+
+#Aquí hice el menú, para que el usuario seleccione que opción desea elegir.
+opc=0
+while opc!=3:
+    print("************")
+    print("\tMÉTODOS DE ORDENAMIENTO")
+    print("************\n")
+    print("_____________")
+    print("¿Qué método desea impementar?")
+    print("_____________")
+    print('''
+    1.- Método de Burbuja
+    2.- Método de Burbuja Mejorada
+    3.- Abandonar''')
+    
+    opc=int(input())
+    if opc==1:
+        #Código de clase para calcular el tiempo de ejecución de un programa
+        inicio=time.time()
+        print("\n1.-Método de burbuja")
+        A=datos()
+        A=Metodo_burbuja(A)
+        Mostrar(A)
+        fin = time.time()
+        tiempo_ejecutado = fin - inicio
+        print("\n El tiempo que tarda en ejecutarse  es:",tiempo_ejecutado)
+    
+    if opc==2:
+        inicio=time.time()
+        print("\n2.- Método de Burbuja Mejorada")
+        A=datos()
+        A=Metodo_burbuja_mejorada(A)
+        Mostrar(A)
+        fin = time.time()
+        tiempo_ejecutado = fin - inicio
+        print("\n  El tiempo que tarda en ejecutarse  es:",tiempo_ejecutado)
+    
+    if opc==3:
+        print("3.-Su opción ha sido abandonar")
+        print("Gracias por usar el programan <3")
