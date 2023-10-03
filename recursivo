@@ -1,0 +1,19 @@
+def burbuja_recursiva(arr, n):
+    # Caso base: si la lista tiene 1 o menos elementos, ya está ordenada
+    if n <= 1:
+        return
+    #caso general
+    # Realizar una pasada a través de la lista para mover el elemento más grande a la última posición
+    for i in range(n - 1):
+        if arr[i] > arr[i + 1]:
+            arr[i], arr[i + 1] = arr[i + 1], arr[i]
+    
+    # Llamar recursivamente al bubble_sort_recursive en la lista reducida
+   burbuja_recursiva(arr, n - 1)
+
+# Ejemplo de uso
+arr = [64, 34, 25, 12, 22, 11, 90]
+n = len(arr)
+burbuja_recursiva(arr, n)
+print("ya esta ordenaod el arreglo:")
+print(arr)
